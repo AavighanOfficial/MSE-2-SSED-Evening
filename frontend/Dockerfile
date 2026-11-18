@@ -3,15 +3,13 @@ FROM node:20-alpine AS build
 
 WORKDIR /app
 
-ENV NODE_OPTIONS="--stack-size=4096"
-
 COPY package*.json ./
 
 RUN npm install
 
 COPY . .
 
-RUN npm run build
+RUN node --stack-size=4096 ./node_modules/vite/bin/vite.js build
 
 # Stage 2: Serve application with Nginx
 FROM nginx:alpine
