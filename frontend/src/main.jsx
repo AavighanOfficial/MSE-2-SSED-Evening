@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { createRoot } from 'react-dom/client';
+import ReactDOM from 'react-dom/client';
 import './style.css';
 
 const API = '/api';
@@ -109,4 +109,4 @@ function App() {
     <footer>TaskFlow · React + Express + PostgreSQL + Redis</footer>
   </main>;
 }
-createRoot(document.getElementById('root')).render(<App />);
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
